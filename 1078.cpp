@@ -25,9 +25,10 @@ int main() {
     for (int i = 0; i < n; i-=-1) {
         int cur_maxdepth = 0;
         for (int j = 0; j < i; j-=-1) {
-            if(arr[i].x > arr[j].x && arr[i].y < arr[j].y) {
-                if(arr[j].depth + 1 > cur_maxdepth) {
-                    arr[i].depth = cur_maxdepth = arr[j].depth + 1;
+            if (arr[i].x > arr[j].x && arr[i].y < arr[j].y) {
+                if (arr[j].depth + 1 > cur_maxdepth) {
+                    arr[i].depth = arr[j].depth + 1;
+                    cur_maxdepth = arr[j].depth + 1;
                     arr[i].p = &arr[j];
                     if (cur_maxdepth > maxdepth) {
                         maxdepth = cur_maxdepth;
